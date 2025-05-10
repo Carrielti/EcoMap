@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000A1D;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+  /* Estilo do menu Hamburguer */
+  
+  .hamburguer {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  
+  .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 5px; 
+  }
+  
+  .nav-menu {
+    display: none;
+    flex-direction: column; 
+    gap: 10px; /* espaçamento */
+    align-items: center; /* Alinha os itens ao centro */
+  }
+  
+  .nav-menu ul {
+    list-style-type: none; /* Remove os marcadores(pontos e números) */
+    padding: 0; /* Remove o preenchimento do padrão da lista */
+    
+  }
+  
+  .nav-menu a {
+    text-decoration: none; /* Remove a decoração padrão da texto */
+    color: #37ff00;
+    font-size: 18px;
+    padding: 10px 20px; /* Adiciona espaçamento de 10px de uma lateral e 20px de outra lateral */
+    transition: background-color 0.3s;
+    flex-direction: row;
+  }
+  
+  .nav-menu a:hover {
+    background-color: #575757;
+  }
+  
+  .nav-menu.open {
+    display: flex;
+  }
+  
+  footer{
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+    height: 100px;
+  }
+
+  .logo{
+    position: absolute;
+    display: flex;
+    height: 40px;
+    width: 125px;
+    margin-left: 48%;
+    top: 3px;
+    
+  }
+
+  .nav-menu-user{
+    display: none;
+    flex-direction: column; 
+    gap: 10px; /* espaçamento */
+    align-items: center; /* Alinha os itens ao centro */
+  }
+  
+  .nav-menu-user ul {
+    list-style-type: none; /* Remove os marcadores(pontos e números) */
+    padding: 0; /* Remove o preenchimento do padrão da lista */
+    
+  }
+  
+  .nav-menu-user a {
+    text-decoration: none; /* Remove a decoração padrão da texto */
+    color: #37ff00;
+    font-size: 18px;
+    padding: 10px 20px; /* Adiciona espaçamento de 10px de uma lateral e 20px de outra lateral */
+    transition: background-color 0.3s;
+  }
+  
+  .nav-menu-user a:hover {
+    background-color: #575757;
+  }
+  
+  .nav-menu-user.open {
+    display: flex;
+  }
+
+  .linha-quadrados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    align-items: stretch; /* Faz todos os quadrados terem a mesma altura */
+  }
+ 
+  .quadrado-direita {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    width: 500px;
+    background-color: rgb(5, 4, 73);
+    margin: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    text-align: center;
+  }
+
+  .q-h1 {
+    margin-bottom: 10px;
+  }
+
+  .imagem-coleta {
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    margin: 20px auto 0 auto;
+    display: block;
+  }
+
+  h1 {
+    color: white;
+    margin-left: 30px;
+  }
