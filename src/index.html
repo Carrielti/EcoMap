@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<!-- Leaflet CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+<!-- Leaflet JS -->
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,9 +33,17 @@
           <li><a href="contato.html">Contato</a></li><br>
         </ul>
       </nav>
+      <div class="logo">
+        <img src="./img/EcoMap Logo.png" />
+      </div>
     </div>
   </header>
   <main>
+
+      <h1>Pontos de Coleta de Pilhas:</h1>
+
+    <h2 style="color: white;">Mapa com Pontos de Coleta</h2>
+    <div id="map" style="height: 400px; margin-bottom: 20px;"></div>
 
     <h1>Pontos de Coleta de Pilhas:</h1>
 
@@ -38,11 +54,11 @@
         </h3>
         <h3 class="q-h1">Horário: Segunda a domingo, das 9h às 16h</h3>
         <br>
-        <img class="imagem-coleta" src="./img/casasbahiacentro.jpeg" alt="Casas Bahia - ponto de coleta">
+        <img class="imagem-coleta" src="./img/casasbahia.png" alt="Casas Bahia - ponto de coleta">
       </div>
   
       <div class="quadrado-direita">
-        <h1 class="q-h1">Coop – Itavuvu</h1>
+        <h1 class="q-h1">Coop Hipermercado</h1>
         <h3 class="q-h1">Endereço: Avenida Itavuvu, 3799 – Jardim Santa Cecília</h3>
         <h3 class="q-h1">Horário: Todos os dias, das 8h às 22h</h3>
         <br>
@@ -84,18 +100,3 @@
 </body>
 
 </html>
-
-
-
-<!--<div class="user" id="user">
-        <img class="logo" src="img/EcoMap Logo.png" alt="Logo">
-      </div>
-      <nav id="nav-menu-user" class="nav-menu-user">
-        <ul>
-          <li><a href="index.html">Home</a></li><br>
-          <li><a href="sobre.html">Sobre</a></li><br>
-          <li><a href="servicos.html">Serviços</a></li><br>
-          <li><a href="contato.html">Contato</a></li><br>
-        </ul>
-      </nav>
-      </div>-->
