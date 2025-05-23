@@ -69,16 +69,96 @@ user.addEventListener("click", () => {
   }
 });
 */
-navigator.geolocation.getCurrentPosition(
-  (position) => {
-    const latitude = position.coords.latitude;
-    latitude = document.getElementById("latitude");
-    const longitude = position.coords.longitude;
-    longitude = document.getElementById("longitude");
-    console.log("Sua posição:", latitude, longitude);
-  },
-  (error) => {
-    console.error("Erro ao obter localização:", error);
-  }
-  
-);
+function calcularDistancia(lat1, lon1, lat2, lon2) {
+  const R = 6371; // Raio da Terra em km
+  const dLat = (lat2 - lat1) * Math.PI / 180; // diferença de latitude em radianos
+  const dLon = (lon2 - lon1) * Math.PI / 180; // diferença de longitude em radianos
+  const a =
+    Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLon/2) * Math.sin(dLon/2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  return R * c; // retorna a distância em km
+}
+
+// Obtém a localização atual do usuário
+navigator.geolocation.getCurrentPosition(pos => {
+  const userLat = pos.coords.latitude;
+  const userLng = pos.coords.longitude;
+
+  // Busca os pontos no servidor (dados.php)
+  fetch('dados.php')
+    .then(response => response.json())
+    .then(pontos => {
+      // Calcula a distância de cada ponto até o usuário
+      pontos.forEach(ponto => {
+        ponto.distancia = calcularDistancia(userLat, userLng, ponto.latitude, ponto.longitude);
+      });
+
+      // Ordena os pontos pela menor distância
+      pontos.sort((a, b) => a.distancia - b.distancia);
+
+      // Seleciona o container onde os pontos serão exibidos
+      const container = document.getElementById('lista-pontos');
+      container.innerHTML = '';
+
+      // Cria os elementos HTML para cada ponto
+      pontos.forEach(ponto => {
+        const div = document.createElement('div');
+        div.className = 'quadrado-direita';
+        div.innerHTML = `
+          <h1 class="q-h1">${ponto.nome}</h1>
+          <h3 class="q-h1">Endereço: ${ponto.endereco}</h3>
+          <h3 class="q-h1">Horário: ${ponto.horario}</h3>
+          <p class="q-h1">Distância aproximada: ${ponto.distancia.toFixed(2)} km</p>
+          <img class="imagem-coleta" src="./img/${ponto.imagem}" alt="${ponto.nome}">
+        `;
+        container.appendChild(div);
+      });
+    });
+}, () => {
+  // Caso a geolocalização não funcione
+  alert("Não foi possível obter sua localização.");
+});
+
+// Cria o mapa no centro do Brasil inicialmente
+const map = L.map('map').setView([-23.5, -47.45], 13);
+
+// Adiciona o fundo do mapa (tiles do OpenStreetMap)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+// Ícone personalizado para o usuário
+const userIcon = L.icon({
+  iconUrl: './img/user-location.png', // opcional, ou use o padrão
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+});
+
+// Pega localização do usuário
+navigator.geolocation.getCurrentPosition(pos => {
+  const userLat = pos.coords.latitude;
+  const userLng = pos.coords.longitude;
+
+  // Mostra posição do usuário no mapa
+  L.marker([userLat, userLng], { icon: userIcon }).addTo(map)
+    .bindPopup('Você está aqui!')
+    .openPopup();
+
+  // Busca os pontos no servidor
+  fetch('dados.php')
+    .then(response => response.json())
+    .then(pontos => {
+      pontos.forEach(ponto => {
+        // Adiciona um marcador para cada ponto
+        const marker = L.marker([ponto.latitude, ponto.longitude]).addTo(map);
+        marker.bindPopup(`
+          <strong>${ponto.nome}</strong><br>
+          ${ponto.endereco}<br>
+          ${ponto.horario}<br>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=${ponto.latitude},${ponto.longitude}" target="_blank">Como chegar</a>
+        `);
+      });
+    });
+});
