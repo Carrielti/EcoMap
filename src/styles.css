@@ -5,9 +5,10 @@ body {
     background-color: #000A1D;
   }
   header {
-    background-color: #333;
+    background-color: #ffffffdf;
     color: #fff;
     padding: 10px;
+    height: 45px;
   }
   
   .menu-container {
@@ -29,7 +30,7 @@ body {
   .bar {
     width: 30px;
     height: 4px;
-    background-color: #ffffff;
+    background-color: #000000;
     border-radius: 5px; 
   }
   
@@ -48,7 +49,7 @@ body {
   
   .nav-menu a {
     text-decoration: none; /* Remove a decoração padrão da texto */
-    color: #37ff00;
+    color: #fff;
     font-size: 18px;
     padding: 10px 20px; /* Adiciona espaçamento de 10px de uma lateral e 20px de outra lateral */
     transition: background-color 0.3s;
@@ -71,14 +72,16 @@ body {
   }
 
   .logo{
-    position: absolute;
-    display: flex;
-    height: 40px;
-    width: 125px;
-    margin-left: 48%;
-    top: 3px;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
   }
+
+  .logo img {
+  height: 50px;
+  width: auto;
+}
 
   .nav-menu-user{
     display: none;
