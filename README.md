@@ -12,6 +12,12 @@ Inicialmente, o projeto utilizava PHP, MySQL e phpMyAdmin para carregar os ponto
 
 ---
 
+## 🌐 Projeto Online
+
+https://carrielti.github.io/EcoMap/
+
+---
+
 ## 🚀 Tecnologias Utilizadas
 
 - HTML5
