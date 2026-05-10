@@ -1,4 +1,5 @@
 <?php
+/* APRENDIZADO - Conexão com o banco de dados
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -12,4 +13,5 @@ if ($conn->connect_error) {
 
 $sql = "SELECT * FROM pontos";
 $result = $conn->query($sql);
+*/
 ?>

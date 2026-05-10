@@ -153,3 +153,12 @@ body {
     color: white;
     margin-left: 30px;
   }
+
+  #map {
+  width: 90%;
+  height: 400px;
+  margin: 30px auto;
+  border-radius: 15px;
+  border: 2px solid #ffffff;
+  overflow: hidden;
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "nome": "Casas Bahia – Centro",
+    "endereco": "Rua Dr. Álvaro Soares, 48 – Centro",
+    "horario": "Segunda a domingo, das 9h às 16h",
+    "latitude": -23.5015,
+    "longitude": -47.4586,
+    "imagem": "casasbahiacentro.jpeg"
+  },
+  {
+    "nome": "Coop Hipermercado",
+    "endereco": "Avenida Itavuvu, 3799 – Jardim Santa Cecília",
+    "horario": "Todos os dias, das 8h às 22h",
+    "latitude": -23.4378,
+    "longitude": -47.4857,
+    "imagem": "coopitavuvu.jpg"
+  },
+  {
+    "nome": "Dicico (Sodimac) – Sorocaba",
+    "endereco": "Avenida Prof. Izoraida Marques Peres, 401 – Parque Campolim",
+    "horario": "Segunda a sábado, das 9h às 22h; domingo, das 12h às 20h",
+    "latitude": -23.5335,
+    "longitude": -47.4638,
+    "imagem": "sodimac-dicico.jpg"
+  },
+  {
+    "nome": "FACENS",
+    "endereco": "Rodovia Senador José Ermírio de Moraes, 1425 – Jardim Constantino Matucci",
+    "horario": "Segunda a sexta, das 8h às 21h; sábado, das 8h às 13h",
+    "latitude": -23.4708,
+    "longitude": -47.4277,
+    "imagem": "facens.jpeg"
+  },
+  {
+    "nome": "Kalunga – Av. Dom Aguirre",
+    "endereco": "Avenida Dom Aguirre, 2121 – Jardim Santa Rosália",
+    "horario": "Segunda a sexta, das 8h às 19h; sábado, das 8h às 18h; domingo, das 10h às 18h",
+    "latitude": -23.4889,
+    "longitude": -47.4381,
+    "imagem": "kalunga-domaguirre.jpg"
+  },
+  {
+    "nome": "Iguatemi Esplanada",
+    "endereco": "Avenida Gisele Constantino, 1850, Votorantim",
+    "horario": "Segunda a sábado, das 10h às 22h; domingo, das 12h às 20h",
+    "latitude": -23.5352,
+    "longitude": -47.4631,
+    "imagem": "iguatemi.jpg"
+  }
+]
